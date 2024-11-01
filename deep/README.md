@@ -71,19 +71,15 @@ To assess the utility of different partitioning methods for distributing data ac
 ### Advantages of Hash Value Partitioning
 #### Even Distribution
 - *Insight:* Hash functions typically provide a uniform distribution of values, which helps evenly distribute data across partitions, reducing the likelihood of hotspots where one partition becomes overloaded.
-- *Evidence:* (Please provide specific evidence to support this point.)
 
 #### Simplicity of Implementation
 - *Insight:* The process of hashing is straightforward and does not require extensive knowledge of data access patterns. It can be easily implemented in most database systems.
-- *Evidence:* (Please provide specific evidence to support this point.)
 
 #### Scalability
 - *Insight:* Adding new partitions is feasible; however, it may require rehashing existing data. As the number of partitions increases, uniform distribution helps maintain performance as the dataset grows.
-- *Evidence:* (Please provide specific evidence to support this point.)
 
 #### Improved Performance for Lookup Operations
 - *Insight:* When the same hash function is consistently applied, lookups for specific keys can be performed quickly, as they are directed to the correct partition without needing to search all partitions.
-- *Evidence:* (Please provide specific evidence to support this point.)
 
 #### Data Isolation
 - *Insight:* By partitioning data, sensitive information can be isolated from less sensitive data. This isolation helps to enforce stricter security protocols on partitions that contain critical or regulated data (e.g., personal identification information, financial records).
@@ -96,19 +92,15 @@ To assess the utility of different partitioning methods for distributing data ac
 ### Limitations
 **Difficulty in Rebalancing**
 - *Insight:* When the number of partitions changes, rebalancing can become complicated and resource-intensive.
-- *Evidence:* (Please provide specific evidence to support this point.)
 
 **Inefficient for Range Queries**
 - *Insight:* Hash partitioning is not well-suited for range queries because related data may be stored in different partitions.
-- *Evidence:* (Please provide specific evidence to support this point.)
 
 **Limited Optimizations for Data Locality**
 - *Insight:* Since the distribution of data is based solely on the hash function, related records might not be stored together, leading to increased latency for queries that require accessing related records.
-- *Evidence:* (Please provide specific evidence to support this point.)
 
 **Potential for Hash Collisions**
 - *Insight:* Although rare with well-designed hash functions, collisions (two different keys resulting in the same hash value) can occur, leading to inefficiencies or complications in data retrieval.
-- *Evidence:* (Please provide specific evidence to support this point.)
 
 ---
 
