@@ -1,0 +1,1 @@
+SELECT "season", "title" AS "first_episode" FROM episodes WHERE episode_in_season = 1;
